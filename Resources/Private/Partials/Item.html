@@ -1,0 +1,10 @@
+<div xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:xo="http://typo3.org/ns/Ps/Xo/ViewHelpers" data-namespace-typo3-fluid="true">
+	<f:section name="Main">
+		<f:render section="Variant{flexform.settings.layout -> xo:format.ucFirst()}" optional="1" arguments="{_all}">
+				<div class="fact--number">{element.data.description}</div>
+				<div class="fact--title">
+					<f:render partial="Header/Header" arguments="{header: element.data.title, layout: element.data.title_type}" />
+				</div>
+		</f:render>
+	</f:section>
+</div>

@@ -1,0 +1,107 @@
+// ---------------------------------------------------------------------------------------------------------------------
+// Bootstrap & XNA
+@import '../../../../xna/Resources/Public/Sass/functions';
+@import '../../../../xna/Resources/Public/Sass/variables';
+@import '../../../../xna/Resources/Public/Sass/mixins';
+@import '../../../../xna/Resources/Public/Sass/definitions';
+
+// ---------------------------------------------------------------------------------------------------------------------
+// Variablen
+$ce-facts--use-css: true !default;
+$ce-facts--layout-inline: true !default;
+
+// ---------------------------------------------------------------------------------------------------------------------
+// CSS
+@if($ce-facts--use-css) {
+
+	// -------------------------------------------------------------------------------------------------------------------
+	// CSS Variablen
+	:root {
+		--fact--number-font-size: #{rem(34px)};
+		--fact--number-font-color: #{$font-color-base};
+
+		--fact--title-font-size: #{rem(20px)};
+		--fact--title-font-color: #{$font-color-base};
+	}
+
+	// -------------------------------------------------------------------------------------------------------------------
+	// Component
+	.fact {
+		.fact--number {
+			font-size: var(--fact--number-font-size);
+			color: var(--fact--number-font-color);
+			line-height: 1;
+		}
+
+		.fact--title {
+			&, a, h1, h2, h3, h4, h5, h6 {
+				margin: rem(3px 0 0 0);
+				line-height: 1.4;
+				font-size: var(--fact--title-font-size);
+				font-weight: $font-weight-bold;
+				color: var(--fact--title-font-color);
+			}
+
+			h1, h2, h3, h4, h5, h6 {
+				margin: 0;
+			}
+		}
+	}
+
+	.facts--container {
+		@include list-unstyled();
+	}
+
+	// -------------------------------------------------------------------------------------------------------------------
+	// Modul
+	.ce-facts {
+		.facts--container {
+			@include make-row();
+		}
+
+		.fact {
+			@include make-col-ready();
+			margin-top: $spacing-default;
+		}
+	}
+
+	// -------------------------------------------------------------------------------------------------------------------
+	// >= 576px
+	@include media-breakpoint-up(sm) {
+		@if($ce-facts--layout-inline) {
+			.ce-facts--inline {
+				.fact {
+					width: 50%;
+					max-width: rem(275px);
+					margin-right: $spacing-default;
+				}
+			}
+		}
+	}
+
+	// -------------------------------------------------------------------------------------------------------------------
+	// >= 768px
+	@include media-breakpoint-up(md) {
+		:root {
+			--fact--number-font-size: #{rem(48px)};
+		}
+
+		.ce-facts {
+			.fact {
+				margin-top: rem(40px);
+			}
+		}
+
+		@if($ce-facts--layout-inline) {
+			.ce-facts--inline {
+				.fact {
+					width: auto;
+				}
+			}
+		}
+	}
+}
+
+// ---------------------------------------------------------------------------------------------------------------------
+// XNA Override
+@import '../../../../xna/Resources/Public/Sass/xna/modules/facts';

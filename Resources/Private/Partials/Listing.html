@@ -1,0 +1,19 @@
+<div xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:xo="http://typo3.org/ns/Ps/Xo/ViewHelpers" data-namespace-typo3-fluid="true">
+	<f:section name="Main">
+		<f:if condition="{data.bodytext}">
+			<f:format.html>{data.bodytext}</f:format.html>
+		</f:if>
+
+		<f:comment>
+			<ul class="facts--container">
+				<f:for each="{elements}" as="element">
+
+					<li class="fact">
+						<f:render partial="Item" section="Main" arguments="{_all}" />
+					</li>
+
+				</f:for>
+			</ul>
+		</f:comment>
+	</f:section>
+</div>

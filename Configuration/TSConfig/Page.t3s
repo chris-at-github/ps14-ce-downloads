@@ -1,0 +1,16 @@
+mod.wizards.newContentElement.wizardItems {
+	common {
+		elements {
+			ce_downloads {
+				iconIdentifier = ps14-content-downloads
+				title = LLL:EXT:ce_downloads/Resources/Private/Language/locallang_tca.xlf:tx_ce_downloads.title
+				description = LLL:EXT:ce_downloads/Resources/Private/Language/locallang_tca.xlf:tx_ce_downloads.description
+				tt_content_defValues {
+					CType = ce_downloads
+				}
+			}
+		}
+
+		show := addToList(ce_downloads)
+	}
+}
