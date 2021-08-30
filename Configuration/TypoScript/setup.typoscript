@@ -18,17 +18,10 @@ tt_content {
 		}
 
 		dataProcessing {
-			30 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
+			30 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
 			30 {
-				as = elements
-				table = tx_xo_domain_model_elements
-				pidInList.field = pid
-				where {
-					data = field:uid
-					intval = 1
-					wrap = tx_xo_content=|
-				}
-				orderBy = sorting
+				as = files
+				references.fieldName = tx_xo_file
 			}
 
 			120 = Ps14\CeDownloads\DataProcessing\ModuleProcessor

@@ -1,0 +1,25 @@
+<div xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:xo="http://typo3.org/ns/Ps/Xo/ViewHelpers" data-namespace-typo3-fluid="true">
+	<f:section name="Main">
+		<f:render section="Variant{flexform.settings.layout -> xo:format.ucFirst()}" optional="1" arguments="{_all}">
+			<a class="download--item-link" href="{f:uri.typolink(parameter: file.publicUrl)}" target="_blank">
+				<f:if condition="{file.title}">{file.title}</span></f:if>
+			</a>
+
+			<f:if condition="{file.description}">
+				<p class="download--item-description"><f:format.nl2br>{file.description}</f:format.nl2br></p>
+			</f:if>
+
+			<f:if condition="{file.properties.extension} || {file.properties.size}">
+				<ul class="download--item-properties">
+					<f:if condition="{file.properties.extension}">
+						<li class="download--item-property download--item-property-type">{file.properties.extension}</li>
+					</f:if>
+
+					<f:if condition="{file.properties.size}">
+						<li class="download--item-property download--item-property-size">{file.properties.size -> xo:format.fileSize()}</li>
+					</f:if>
+				</ul>
+			</f:if>
+		</f:render>
+	</f:section>
+</div>

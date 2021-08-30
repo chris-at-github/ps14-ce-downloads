@@ -4,16 +4,12 @@
 			<f:format.html>{data.bodytext}</f:format.html>
 		</f:if>
 
-		<f:comment>
-			<ul class="facts--container">
-				<f:for each="{elements}" as="element">
-
-					<li class="fact">
-						<f:render partial="Item" section="Main" arguments="{_all}" />
+			<ul class="downloads--container">
+				<f:for each="{files}" as="file">
+					<li class="download--item" data-target="{f:uri.typolink(parameter: file.publicUrl)}">
+						<f:render partial="Downloads/Item" section="Main" arguments="{_all}" />
 					</li>
-
 				</f:for>
 			</ul>
-		</f:comment>
 	</f:section>
 </div>
