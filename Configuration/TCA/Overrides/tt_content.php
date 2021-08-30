@@ -6,7 +6,7 @@
 	array(
 		'LLL:EXT:ce_downloads/Resources/Private/Language/locallang_tca.xlf:tx_ce_downloads.title',
 		'ce_downloads',
-		'ps14-content-downloads'
+		'content-special-uploads'
 	),
 	'CType',
 	'ce_downloads'
