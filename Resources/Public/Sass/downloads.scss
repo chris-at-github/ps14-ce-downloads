@@ -23,6 +23,8 @@ $ce-downloads--layout-default: true !default;
 	// Component
 	.download--item {
 		& {
+			position: relative;
+			padding: rem(15px 0 15px 50px);
 			cursor: pointer;
 			@extend %accessibility-focus-within;
 		}
@@ -30,7 +32,21 @@ $ce-downloads--layout-default: true !default;
 		&:hover, .focusable &:focus-within {
 			.download--item-link {
 				background-size: 100% 2px;
+				color: $theme-color-primary;
 			}
+
+			svg {
+				transform: translate(0, 3px);
+			}
+		}
+
+		svg {
+			position: absolute;
+			top: 20px; left: 1px;
+			width: 29px;
+			height: 28px;
+			fill: $theme-color-primary;
+			transition: transform $transition-duration;
 		}
 
 		.download--item-link {
@@ -41,6 +57,15 @@ $ce-downloads--layout-default: true !default;
 
 			&:hover, .focusable &:focus {
 				outline: 0;
+			}
+
+			&:after {
+				content: '';
+				display: block;
+				position: absolute;
+				top: 0; bottom: 0;
+				left: 0; right: 0;
+				z-index: 10;
 			}
 		}
 
@@ -88,11 +113,19 @@ $ce-downloads--layout-default: true !default;
 
 	.downloads--container {
 		& {
-			@include list-unstyled();
+			margin: 0;
+			padding: 0;
+			list-style: none;
 		}
 
 		& > li {
-			padding: rem(15px 0 15px 50px);
+			& {
+				margin: 0;
+			}
+
+			& + li {
+				border-top: 1px solid $color-grey-lighten;
+			}
 		}
 	}
 

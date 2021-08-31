@@ -6,7 +6,7 @@
 
 			<ul class="downloads--container">
 				<f:for each="{files}" as="file">
-					<li class="download--item" data-target="{f:uri.typolink(parameter: file.publicUrl)}">
+					<li class="download--item">
 						<f:render partial="Downloads/Item" section="Main" arguments="{_all}" />
 					</li>
 				</f:for>
