@@ -2,9 +2,7 @@
 <f:layout name="Default" />
 	<f:section name="Main">
 		<f:spaceless>
-			<f:if condition="{files}">
-				<f:render partial="Downloads/Listing" section="Main" arguments="{_all}" />
-			</f:if>
+			<f:render partial="Downloads/Listing" section="Main" arguments="{_all}" />
 		</f:spaceless>
 	</f:section>
 </html>
